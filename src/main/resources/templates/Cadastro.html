@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width" />
+        <title>Abra a sua Conta</title>
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet"/>
+    </head>
+    <body>
+        <form action="">
+
+            <h1>Preencha o Formulário abaixo para abrir sua conta</h1>
+
+            <fieldset>
+                <legend>
+                    <h2>Seus Dados</h2>
+                </legend>
+                
+                <div class="field">
+                    <label for="name">Nome</label>
+                    <input type="text" name="name" required>
+                </div>
+
+                <div class="field">
+                    <label for="lastname">Sobrenome</label>
+                    <input type="text" name="lastname" required>
+                </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" required>
+                </div>
+
+                <div class="field">
+                    <label for="cnh">CNH</label>
+                    <input type="text" name="cnh" required>
+                </div>
+
+                <div class="field">
+                    <label for="birthday">Data de Nascimento</label>
+                    <input type="text" name="birthday" required>
+                </div>
+
+                <div class="field">
+                    <label for="cpf">CPF</label>
+                    <input type="text" name="cpf" required>
+                </div>
+            </fieldset>
+        </form>
+    </body>
+</html>
