@@ -8,71 +8,77 @@
         <title>Abra a sua Conta</title>
         
         
-        <link rel="stylesheet" type="text/css" href="/main/resources/static/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="/src/main/resources/static/css/style.css"/>
 
         
     </head>
 
     <body>
-        
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="clearfix">
-                    <h1 class="panel-title aw-titulo-panel">Preencha o formulário abaixo para abrir sua conta</h1>
-                </div>
+        <form class="form-horizontal" method="POST" th:object="${client}">
+
+            <div class="alert alert-success" th:text="${mensagem}" 
+                th:if="${not #String.isEmpty(mensagem)}">
             </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="clearfix">
+                        <h1 class="panel-title aw-titulo-panel">Preencha o formulário abaixo para abrir sua conta</h1>
+                    </div>
+                </div>
         
-            <div class="panel-body">
+                <div class="panel-body">
          
-                <div class="form-group aw-required">
-                    <label for="name" class="col-sm-2 control-label">Nome:</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="name" th:field="*{name}" autofocus="autofocus"/>
+                    <div class="form-group aw-required">
+                        <label for="name" class="col-sm-2 control-label">Nome:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="name" th:field="*{client_name}" autofocus="autofocus"/>
+                        </div>
                     </div>
-                </div>
-
-
-                <div class="form-group aw-required">
-                    <label for="lastname" class="col-sm-2 control-label">Sobrenome:</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="lastname" th:field="*{lastname}" autofocus="autofocus"/>
+               
+                    <div class="form-group aw-required">
+                        <label for="lastname" class="col-sm-2 control-label">Sobrenome:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="lastname" th:field="*{client_lastname}"autofocus="autofocus"/>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group aw-required">
-                    <label for="cnh" class="col-sm-2 control-label">CNH:</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="cnh" th:field="*{cnh}" autofocus="autofocus"/>
+                    <div class="form-group aw-required">
+                        <label for="cnh" class="col-sm-2 control-label">CNH:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="cnh" th:field="*{client_cnh}"autofocus="autofocus">
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group aw-required">
-                    <label for="email" class="col-sm-2 control-label">Email:</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="email" th:field="*{email}" autofocus="autofocus"/>
+                    <div class="form-group aw-required">
+                        <label for="email" class="col-sm-2 control-label">Email:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="email" th:field="*{client_email}" autofocus="autofocus"/>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group aw-required">
-                    <label for="birthday" class="col-sm-2 control-label">Data de Nascimento:</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="birthday" th:field="*{birthday}" autofocus="autofocus"/>
+                    <div class="form-group aw-required">
+                        <label for="birthday" class="col-sm-2 control-label">Data de Nascimento:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="birthday" th:field="*{client_birthday}" autofocus="autofocus"/>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group aw-required">
-                    <label for="cpf" class="col-sm-2 control-label">CPF</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="cpf" th:field="*{cpf}" autofocus="autofocus"/>
+                    <div class="form-group aw-required">
+                        <label for="cpf" class="col-sm-2 control-label">CPF:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="cpf" th:field="*{client_cpf}" autofocus="autofocus"/>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-primary">Enviar para Análise</button>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary">Enviar para Análise</button>
+                        </div>
                     </div>
+
                 </div>
             </div>    
-            </form>
+        </form>
     </body>
 </html>
