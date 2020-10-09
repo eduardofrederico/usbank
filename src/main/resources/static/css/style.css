@@ -1,13 +1,7 @@
-
-
-html {
-    background-color: blue;
-}
-
 body {
     margin: 10px;
 }
 
-/*.aw-required > .control-label:after {
+.aw-required > .control-label:after {
     content: "*";
-}*/
+}
