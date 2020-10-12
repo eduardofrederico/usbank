@@ -7,6 +7,7 @@
 
         <title>Abra a sua Conta</title>
         
+        <link rel="stylesheet" type="text/css" href="/src/main/resources/static/css/bootstrap.min.css}"/>
         
         <link rel="stylesheet" type="text/css" href="/src/main/resources/static/css/style.css"/>
 
@@ -17,7 +18,13 @@
         <form class="form-horizontal" method="POST" th:object="${client}">
 
             <div class="alert alert-success" th:text="${mensagem}" 
-                th:if="${not #String.isEmpty(mensagem)}">
+                th:if="${not #strings.isEmpty(mensagem)}">
+            </div>
+
+            <div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
+                <div th:each="detailedError : ${#fields.detailedErrors()}">
+                    <span th:text="${detailedError.message}"></span>
+                </div>
             </div>
 
             <div class="panel panel-default">
@@ -29,42 +36,42 @@
         
                 <div class="panel-body">
          
-                    <div class="form-group aw-required">
+                    <div class="form-group aw-required"  th:classappend="${#fields.hasErrors('client_name')} ? has-error">
                         <label for="name" class="col-sm-2 control-label">Nome:</label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" id="name" th:field="*{client_name}" autofocus="autofocus"/>
                         </div>
                     </div>
                
-                    <div class="form-group aw-required">
+                    <div class="form-group aw-required"  th:classappend="${#fields.hasErrors('client_lastname')} ? has-error">
                         <label for="lastname" class="col-sm-2 control-label">Sobrenome:</label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" id="lastname" th:field="*{client_lastname}"autofocus="autofocus"/>
                         </div>
                     </div>
 
-                    <div class="form-group aw-required">
+                    <div class="form-group aw-required"  th:classappend="${#fields.hasErrors('client_cnh')} ? has-error">
                         <label for="cnh" class="col-sm-2 control-label">CNH:</label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" id="cnh" th:field="*{client_cnh}"autofocus="autofocus">
                         </div>
                     </div>
 
-                    <div class="form-group aw-required">
+                    <div class="form-group aw-required"  th:classappend="${#fields.hasErrors('client_email')} ? has-error">
                         <label for="email" class="col-sm-2 control-label">Email:</label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" id="email" th:field="*{client_email}" autofocus="autofocus"/>
                         </div>
                     </div>
 
-                    <div class="form-group aw-required">
+                    <div class="form-group aw-required"  th:classappend="${#fields.hasErrors('client_birthday')} ? has-error">
                         <label for="birthday" class="col-sm-2 control-label">Data de Nascimento:</label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" id="birthday" th:field="*{client_birthday}" autofocus="autofocus"/>
                         </div>
                     </div>
 
-                    <div class="form-group aw-required">
+                    <div class="form-group aw-required"  th:classappend="${#fields.hasErrors('client_cpf')} ? has-error">
                         <label for="cpf" class="col-sm-2 control-label">CPF:</label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" id="cpf" th:field="*{client_cpf}" autofocus="autofocus"/>

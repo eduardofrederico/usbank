@@ -2,13 +2,29 @@ package com.nossobancodigital.usbank.model;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.br.CPF;
+
 public class Clients {
 
+    @NotBlank(message = "Nome é Obrigatório")
     private String client_name;
+
+    @NotBlank(message = "Sobrenome é Obrigatório")
     private String client_lastname;
+
+    @NotNull(message = "Email é Obrigatório")
     private String client_email;
+
+    @NotNull(message = "Número da CNH é um campo Obrigatório")
     private String client_cnh;
+
+    @NotNull(message = "Data de Nascimento é Obrigatório")
     private Date client_birthday;
+
+    @CPF(message = "Número do CPF é Obrigatório")
     private String client_cpf;
 
     public String getClient_cpf() {
